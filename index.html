@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>Vinodh Kumar - Nutrition Advocate</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .home-section {
+            height: 100vh;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .home-section h1 {
+            font-size: 4rem;
+            font-weight: bold;
+        }
+
+        .home-section p {
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            /* Adjust the font size here */
+        }
+
+        .center-align {
+            display: flex;
+            justify-content: center;
+        }
+
+        .form-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bg-light {
+            background-color: #f8f9fa !important;
+        }
+
+        .shadow {
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+        }
+
+        .table-bordered th,
+        .table-bordered td {
+            border-color: #dee2e6;
+        }
+
+        .table-primary {
+            --bs-table-bg: #cfe2ff;
+            --bs-table-striped-bg: #c5d7f2;
+            --bs-table-striped-color: #000;
+        }
+
+        .table-secondary {
+            --bs-table-bg: #e2e3e5;
+            --bs-table-striped-bg: #d7d8da;
+            --bs-table-striped-color: #000;
+        }
+
+        .home-section {
+            height: 100vh;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #00704A;
+            /* Dark green background similar to Herbalife's branding */
+            color: white;
+            /* Ensures text is readable against the dark background */
+        }
+
+        .home-section h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 0.5em;
+        }
+
+        .home-section p {
+            font-size: 1.8rem;
+            /* Slightly larger for emphasis */
+            margin-bottom: 1em;
+        }
+
+        .btn-primary {
+            background-color: #FFD517;
+            /* Bright yellow for contrast */
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.5rem;
+        }
+
+        .btn-primary:hover {
+            background-color: #E5C213;
+            /* Darker shade of yellow on hover */
+        }
+
+        /* Optional: Overlay style if you decide to add a background image */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            /* Black overlay for better text visibility */
+            z-index: -1;
+        }
+
+        .fas {
+            font-size: 80px;
+            /* Increase the size of the icons */
+        }
+
+        @media (max-width: 768px) {
+            .fas {
+                font-size: 50px;
+                /* Smaller icons on mobile devices */
+            }
+        }
+
+        .fas {
+            color: #00704A !important;
+            /* Forces the color change */
+        }
+
+        /* If targeting specific icons */
+        .fas.fa-user-md,
+        .fas.fa-dumbbell,
+        .fas.fa-leaf,
+        .fas.fa-running,
+        .fas.fa-utensils {
+            color: #00704A !important;
+        }
+
+        /* Base styles for carousel */
+        .carousel-inner {
+            height: max-content;
+            /* Or any other suitable height */
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height:max-content;
+            /* Match carousel-inner height */
+            object-fit: cover;
+            object-position: center center;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+
+            /* Adjustments for tablets */
+            .carousel-inner,
+            .carousel-item img {
+                height: 300px;
+                /* Smaller height for smaller devices */
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            /* Adjustments for mobile phones */
+            .carousel-inner,
+            .carousel-item img {
+                height: 200px;
+                /* Even smaller height for mobile devices */
+            }
+        }
+
+        /* Enhance readability of captions on smaller screens */
+        @media (max-width: 768px) {
+            .carousel-caption {
+                font-size: 0.9rem;
+                /* Smaller font size for smaller screens */
+                padding: 8px;
+                /* Less padding */
+            }
+        }
+
+        /* Enhanced form styling */
+        .form-control {
+            border: 2px solid #00704A;
+            /* Adds a green border to input boxes */
+            border-radius: 0.25rem;
+            /* Rounds the corners of the input boxes */
+        }
+
+        .btn-success {
+            background-color: #28a745;
+            /* Green button, you can adjust the color as needed */
+            border-color: #28a745;
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Vinodh Kumar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#testimonials">Testimonials</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+
+        <section id="home" class="home-section">
+            <div class="overlay"></div> <!-- Optional overlay if you want to add a background image -->
+            <h1>Welcome to My Nutrition Journey</h1>
+            <p>Your health and wellness partner</p>
+            <a href="#services" class="btn btn-primary">Explore Services</a>
+        </section>
+
+        <section id="about" class="py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <h2 class="display-4 text-primary">About Me</h2>
+                        <p class="lead">
+                            I'm Vinodh Kumar, a dedicated nutrition advocate. I have helped numerous students manage
+                            their healthy weight and overcome various health challenges such as improving immunity,
+                            managing stress, and reversing diabetes.
+                        </p>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="img/vinodh.jpg" alt="Vinodh Kumar" class="img-fluid rounded shadow mb-4">
+                        <table class="table table-bordered">
+                            <tr class="table-primary">
+                                <th class="text-center">Name</th>
+                                <td class="text-center">Vinodh Kumar</td>
+                            </tr>
+                            <tr class="table-secondary">
+                                <th class="text-center">Profession</th>
+                                <td class="text-center">Nutrition Advocate</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="services" class="py-5">
+            <div class="container">
+                <h2 class="display-4 text-primary text-center mb-5">Services</h2>
+                <div class="row text-center d-flex justify-content-center">
+                    <div class="col-12 col-md-4 col-lg-2">
+                        <i class="fas fa-user-md fa-5x mb-3 text-primary"></i>
+                        <h3>One-to-One Consultation</h3>
+                        <p>Personalized consultation sessions available both online and offline</p>
+                    </div>
+
+                    <div class="col-12 col-md-4 col-lg-2">
+                        <i class="fas fa-dumbbell fa-5x mb-3 text-primary"></i>
+                        <h3>FitHour</h3>
+                        <p>30 minutes of daily fitness sessions from Monday to Saturday.</p>
+                    </div>
+
+                    <div class="col-12 col-md-4 col-lg-2">
+                        <i class="fas fa-leaf fa-5x mb-3 text-primary"></i>
+                        <h3>Nutrition Information Session</h3>
+                        <p>Evening sessions providing valuable nutrition information from 7:30 to 8:30 PM</p>
+                    </div>
+
+                    <div class="col-12 col-md-4 col-lg-2">
+                        <i class="fas fa-running fa-5x mb-3 text-primary"></i>
+                        <h3>Marathon Running</h3>
+                        <p>Join our marathon running sessions to improve your fitness and stamina.</p>
+                    </div>
+
+                    <div class="col-12 col-md-4 col-lg-2">
+                        <i class="fas fa-utensils fa-5x mb-3 text-primary"></i>
+                        <h3>Diet Planning</h3>
+                        <p>Customized diet plans tailored to individuals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="testimonials" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-5">Testimonials</h2>
+                <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="img/student1.jpg" class="d-block w-100" alt="Student 1 Before/After">
+                            <div class="carousel-caption d-none d-md-block">
+                                <p>"This program has transformed my life completely!" - Student 1</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/student2.jpg" class="d-block w-100" alt="Student 2 Before/After">
+                            <div class="carousel-caption d-none d-md-block">
+                                <p>"I've achieved my fitness goals thanks to this guidance." - Student 2</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/student3.jpg" class="d-block w-100" alt="Student 3 Before/After">
+                            <div class="carousel-caption d-none d-md-block">
+                                <p>"A truly remarkable change in my lifestyle and health." - Student 3</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/student4.jpg" class="d-block w-100" alt="Student 4 Before/After">
+                            <div class="carousel-caption d-none d-md-block">
+                                <p>"I couldn't have done it without this amazing support!" - Student 4</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/student5.jpg" class="d-block w-100" alt="Student 5 Before/After">
+                            <div class="carousel-caption d-none d-md-block">
+                                <p>"Feeling healthier and more vibrant than ever!" - Student 5</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/student6.jpg" class="d-block w-100" alt="Student 6 Before/After">
+                            <div class="carousel-caption d-none d-md-block">
+                                <p>"The best decision for my health and well-being." - Student 6</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-5">
+            <h2 class="display-4 text-primary text-center mb-5">Contact</h2>
+            <div class="container">
+                <div class="row justify-content-center"> <!-- Adjusted for center alignment -->
+                    <div class="col-md-8">
+                        <form id="contactForm" class="needs-validation" novalidate>
+                            <div class="mb-3 row"> <!-- Added row for alignment -->
+                                <label for="name" class="col-sm-2 col-form-label">Name:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="name" id="name"
+                                        placeholder="Enter your name" required>
+                                    <div class="invalid-feedback">
+                                        Please enter your name.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="email" class="col-sm-2 col-form-label">Email:</label>
+                                <div class="col-sm-10">
+                                    <input type="email" name="email" id="email" class="form-control"
+                                        placeholder="Enter your email" required>
+                                    <div class="invalid-feedback">
+                                        Please enter a valid email address.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="gender" class="col-sm-2 col-form-label">Gender:</label>
+                                <div class="col-sm-10">
+                                    <select id="gender" name="gender" required class="form-control">
+                                        <option value="" disabled selected>Select your gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="image" class="col-sm-2 col-form-label">Upload Image:</label>
+                                <div class="col-sm-10">
+                                    <input type="file" name="image" id="image" accept="image/*" required
+                                        class="form-control">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="phone" class="col-sm-2 col-form-label">Phone:</label>
+                                <div class="col-sm-10">
+                                    <input type="number" name="phone" id="phone" class="form-control"
+                                        placeholder="Enter your phone number">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="message" class="col-sm-2 col-form-label">Message:</label>
+                                <div class="col-sm-10">
+                                    <textarea name="message" id="message" class="form-control"
+                                        placeholder="Write your message here"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-10 offset-sm-2">
+                                    <button type="submit" class="btn btn-success">Submit</button>
+                                    <!-- Changed button color -->
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+
+        (function () {
+            'use strict';
+            var forms = document.querySelectorAll('.needs-validation');
+            Array.prototype.slice.call(forms).forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    } else {
+                        alert('Form submitted successfully!');
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
+    </script>
+</body>
+
+</html>
